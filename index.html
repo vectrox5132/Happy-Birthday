@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Munni</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(120deg, #ffb6c1, #ffd1dc, #ffe6eb);
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    h1 {
+        margin-top: 30px;
+        font-size: 48px;
+        font-weight: bold;
+        color: #d63384;
+    }
+
+    h3 {
+        margin-top: -10px;
+        font-size: 22px;
+        color: #c2185b;
+    }
+
+    .photo {
+        width: 330px;
+        height: 330px;
+        border-radius: 20px;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 14px 35px;
+        font-size: 22px;
+        color: white;
+        background-color: #d63384;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.4s;
+        box-shadow: 0px 0px 15px rgba(255, 105, 180, .7);
+    }
+
+    button:hover {
+        background-color: #ff1493;
+        transform: scale(1.1);
+    }
+
+    /* Floating heart animations */
+    .heart {
+        position: fixed;
+        bottom: -10px;
+        color: #ff1e75;
+        font-size: 25px;
+        animation: floatUp 5s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0) scale(1); }
+        100% { transform: translateY(-700px) scale(1.5); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    #messageBox {
+        display: none;
+        padding: 30px;
+        margin: 30px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        font-size: 20px;
+        color: #c2185b;
+        line-height: 1.6;
+        box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+    }
+
+    audio {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- Background Music -->
+<iframe width="0" height="0" src="https://www.youtube.com/embed/6POZlJAZsok?autoplay=1&loop=1&playlist=6POZlJAZsok" frameborder="0" allow="autoplay"></iframe>
+
+<h1>Happy Birthday Munni 🎀</h1>
+<h3>7 November</h3>
+
+<img class="photo" src="munni.jpg.jpg">
+
+<button onclick="showMessage()">Click Me</button>
+
+<div id="messageBox">
+    My Munni ❤  
+    <br><br>
+    I don’t know how life works, but I know one thing —  
+    **my world feels complete with you.**  
+    You are not just special, you’re my peace.  
+    When I think of the future, I only see *you and me*,  
+    building a life, growing together.  
+    I love your smile, your voice, your dreams, your innocence —  
+    I love EVERYTHING about you.  
+    <br><br>
+    I want to support your goals, your ambitions, your dreams.  
+    I want to see you winning in life… and I want to clap the loudest.  
+    <br><br>
+    I’m always here — cheering for you, choosing you, loving you.  
+    No matter what the world says,  
+    **you will always be my forever.**
+    <br><br>
+    Happy Birthday, my love. 💞  
+    From,  
+    A
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("messageBox").style.display = "block";
+}
+
+// Floating hearts generator
+setInterval(() => {
+    let h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.body.appendChild(h);
+
+    setTimeout(() => { h.remove(); }, 8000);
+}, 500);
+</script>
+
+</body>
+</html>
